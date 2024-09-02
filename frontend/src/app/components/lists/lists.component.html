@@ -1,0 +1,41 @@
+<p class="user" *ngIf="user">
+  Listas de {{ user.username.toUpperCase() }}
+</p>
+
+<!-- Seção para exibir as listas -->
+<div class="lists">
+  <div *ngFor="let list of lists" class="publication">
+    <div class="one-list">
+      <p class="list-title">{{ list.title }}</p>
+      
+      <!-- Botão para adicionar uma nova tarefa à lista -->
+      <button 
+        (click)="newTask(list.id)" 
+        class="add-btn"
+      >
+        Adicionar Tarefa
+      </button>
+      
+      <!-- Botão para eliminar a lista -->
+      <button 
+        (click)="deleteList(list.id)" 
+        class="delete-btn"
+      >
+        Eliminar Lista
+      </button>
+      
+      <!-- Exibe as tarefas associadas a cada lista -->
+      <ng-container *ngFor="let task of list.tasks">
+        <div *ngIf="list.id === task.list_id" class="task">
+          <p class="task-title">{{ task.text }}</p>
+          <button 
+            (click)="deleteTask(task.id)" 
+            class="delete-btn"
+          >
+            Eliminar Tarefa
+          </button>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="signup-form">
+  <form (ngSubmit)="signUp()">
+      <input type="text" name="username" [(ngModel)]="user.username" placeholder="Usuário" required>
+      <input type="email" name="email" [(ngModel)]="user.email" placeholder="Email" required>
+      <input type="password" name="password" [(ngModel)]="user.password" placeholder="Senha" required>
+      <button type="submit">Cadastrar</button>
+  </form>
+</div>

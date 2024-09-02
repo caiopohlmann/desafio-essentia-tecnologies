@@ -1,0 +1,8 @@
+<div>
+    <div class="publication-form">
+        <form (submit)="addList()">
+            <input type="text" name="list" [(ngModel)]="list.title" placeholder="Adicionar lista" required>
+            <button type="submit">Adicionar lista</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+.navigation {
+    display: flex;
+    justify-content: center;
+    background-color: #007bff; /* Cor de fundo azul */
+    padding: 0.5rem 1rem;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    max-width: 1200px; /* Limita a largura máxima */
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+nav ul li a:hover {
+    background-color: #0056b3; /* Tom mais escuro de azul para o hover */
+    transform: scale(1.05);
+}
+
+nav ul li a.active {
+    background-color: #004085; /* Azul ainda mais escuro para o link ativo */
+}

@@ -1,0 +1,25 @@
+<div class="navigation">
+    <nav>
+        <ul>
+            <ng-container *ngIf="!userService.loggedIn(); else loggedIn">
+                <li>
+                    <a routerLink="/registrarse" routerLinkActive="active">Registrarse</a>
+                </li>
+                <li>
+                    <a routerLink="/entrar" routerLinkActive="active">Entrar</a>
+                </li>
+            </ng-container>
+            <ng-template #loggedIn>
+                <li>
+                    <a routerLink="/adicionar-lista" routerLinkActive="active">Adicionar lista</a>
+                </li>
+                <li>
+                    <a routerLink="/listas" routerLinkActive="active">Listas</a>
+                </li>
+                <li>
+                    <a routerLink="/login" (click)="userService.logOut()">Desconectar-se</a>
+                </li>
+            </ng-template>
+        </ul>
+    </nav>
+</div>

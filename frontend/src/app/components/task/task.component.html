@@ -1,0 +1,21 @@
+<p>Adicionar tareas a la lista</p>
+
+<div>
+    <div class="addList-form">
+        <form (ngSubmit)="addTask()" #taskForm="ngForm">
+            <input 
+                type="text" 
+                name="text" 
+                [(ngModel)]="task.text" 
+                placeholder="Adicionar Tarefa" 
+                required 
+                #taskText="ngModel">
+            
+            <button 
+                type="submit" 
+                [disabled]="!taskText.valid">
+                Adicionar Tarefa
+            </button>
+        </form>
+    </div>
+</div>
